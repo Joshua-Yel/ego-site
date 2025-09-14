@@ -61,7 +61,7 @@ export const BetaSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Beta Benefits */}
           <div className="space-y-8">
-            <div className="card-morphing bg-card/10 backdrop-blur border-primary-foreground/20 p-8">
+            <div className="card-professional bg-card/10 backdrop-blur border-primary-foreground/20 p-8">
               <h3 className="text-2xl font-bold mb-6 text-primary-foreground flex items-center">
                 <Star className="mr-3 h-6 w-6 text-accent animate-float-gentle" />
                 Beta Tester Benefits
@@ -98,11 +98,11 @@ export const BetaSection = () => {
             {/* Social Proof */}
             <div className="grid gap-4">
               {testimonialPlaceholders.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="card-morphing bg-card/10 backdrop-blur border-primary-foreground/20 p-4 hover-lift"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+              <div 
+                key={index}
+                className="card-professional bg-card/10 backdrop-blur border-primary-foreground/20 p-4 hover-lift"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                   <div className="flex items-start space-x-3">
                     <div className="w-10 h-10 bg-primary/30 rounded-full flex items-center justify-center">
                       <Users className="h-5 w-5 text-primary-foreground" />
@@ -127,7 +127,7 @@ export const BetaSection = () => {
 
           {/* Signup Form */}
           <div className="space-y-8">
-            <div className="card-morphing bg-card p-8 md:p-10">
+            <div className="card-professional bg-card p-8 md:p-10">
               <h3 className="text-2xl font-bold mb-6 text-card-foreground text-center">
                 Reserve Your Beta Spot
               </h3>
@@ -193,7 +193,7 @@ export const BetaSection = () => {
               <div className="text-primary-foreground/80">
                 Have questions about the beta program?
               </div>
-              <Button className="btn-morphing">
+              <Button className="btn-professional">
                 Contact Beta Team
               </Button>
             </div>

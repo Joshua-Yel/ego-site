@@ -69,7 +69,7 @@ export const SolutionSection = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="card-morphing group hover-lift"
+              className="card-professional group hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative mb-6">
@@ -91,7 +91,7 @@ export const SolutionSection = () => {
         </div>
 
         {/* Technology Stack */}
-        <div className="card-morphing bg-gradient-hero p-8 md:p-12">
+        <div className="card-professional bg-gradient-hero p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4 text-primary-foreground">
               Powered by Advanced Technology

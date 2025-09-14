@@ -115,7 +115,7 @@ export const ImpactSection = () => {
           {impacts.map((impact, index) => (
             <div 
               key={index}
-              className="card-morphing text-center group hover-lift"
+              className="card-professional text-center group hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative mb-6">
@@ -171,7 +171,7 @@ export const ImpactSection = () => {
             </div>
           </div>
 
-          <div className="card-morphing bg-gradient-warm p-8">
+          <div className="card-professional bg-gradient-warm p-8">
             <h4 className="text-xl font-semibold mb-6 text-card-foreground">
               Economic Impact Projection
             </h4>
@@ -203,7 +203,7 @@ export const ImpactSection = () => {
         </div>
 
         {/* Implementation Timeline */}
-        <div className="card-morphing bg-muted/30 p-8 md:p-12">
+        <div className="card-professional bg-muted/30 p-8 md:p-12">
           <h3 className="text-3xl font-bold text-center mb-12 text-card-foreground">
             Implementation Roadmap
           </h3>

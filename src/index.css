@@ -61,7 +61,7 @@
     --animation-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     --animation-morphing: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -119,21 +119,7 @@
   }
 }
 
-/* Morphing Keyframes & Advanced Animations */
-@keyframes morphing-blob {
-  0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: translate3d(0, 0, 0) rotateZ(0deg);
-  }
-  34% {
-    border-radius: 70% 60% 20% 40% / 40% 20% 80% 60%;
-    transform: translate3d(5px, -5px, 0) rotateZ(5deg);
-  }
-  67% {
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    transform: translate3d(-5px, 10px, 0) rotateZ(-5deg);
-  }
-}
+/* Professional Animations */
 
 @keyframes float-gentle {
   0%, 100% {
@@ -173,17 +159,6 @@
   }
 }
 
-@keyframes morphing-scale {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.05) rotate(2deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
 
 @keyframes particle-float {
   0% {
@@ -212,38 +187,36 @@
 @layer components {
   /* Morphing Button Variants */
   .btn-hero {
-    @apply relative px-8 py-4 text-lg font-semibold rounded-2xl border-0;
+    @apply relative px-8 py-4 text-lg font-semibold rounded-lg border-0;
     @apply bg-gradient-to-r from-primary to-secondary;
     @apply text-primary-foreground transition-all duration-300;
     @apply hover:shadow-glow hover:scale-105 active:scale-95;
-    @apply before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r;
+    @apply before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r;
     @apply before:from-primary-glow before:to-secondary-glow before:opacity-0;
     @apply before:transition-opacity before:duration-300 hover:before:opacity-100;
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
   }
 
-  .btn-morphing {
-    @apply relative px-6 py-3 font-medium rounded-xl transition-all duration-500;
+  .btn-professional {
+    @apply relative px-6 py-3 font-medium rounded-lg transition-all duration-300;
     @apply bg-card border-2 border-primary text-primary;
     @apply hover:bg-primary hover:text-primary-foreground hover:border-primary;
     @apply hover:shadow-morphing active:scale-95;
-    animation: morphing-scale 3s ease-in-out infinite;
   }
 
   .btn-beta {
-    @apply px-8 py-4 font-bold rounded-2xl transition-all duration-300;
+    @apply px-8 py-4 font-bold rounded-lg transition-all duration-300;
     @apply bg-accent text-accent-foreground shadow-soft;
     @apply hover:shadow-morphing hover:scale-105 active:scale-95;
     @apply relative overflow-hidden;
   }
 
-  /* Card Morphing Effects */
-  .card-morphing {
-    @apply bg-card rounded-3xl p-6 transition-all duration-500;
+  /* Professional Card Effects */
+  .card-professional {
+    @apply bg-card rounded-lg p-6 transition-all duration-300;
     @apply border border-border shadow-soft hover:shadow-intense;
     @apply hover:scale-105 hover:-translate-y-2;
-    animation: morphing-blob 8s ease-in-out infinite;
   }
 
   .card-float {
@@ -264,10 +237,9 @@
   }
 
   /* Background Effects */
-  .bg-morphing-blob {
+  .bg-professional-gradient {
     @apply absolute inset-0 opacity-10;
     background: var(--gradient-radial);
-    animation: morphing-blob 10s ease-in-out infinite;
   }
 
   .bg-particles {

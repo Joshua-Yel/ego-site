@@ -83,10 +83,10 @@ export const AppShowcase = () => {
 
         {/* App Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="bg-card rounded-2xl p-2 border border-border shadow-soft">
+          <div className="bg-card rounded-lg p-2 border border-border shadow-soft">
             <button
               onClick={() => setActiveApp('transit')}
-              className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+              className={`px-8 py-4 rounded-lg font-semibold transition-all duration-300 ${
                 activeApp === 'transit' 
                   ? 'bg-primary text-primary-foreground shadow-morphing' 
                   : 'text-muted-foreground hover:text-foreground'
@@ -96,7 +96,7 @@ export const AppShowcase = () => {
             </button>
             <button
               onClick={() => setActiveApp('commute')}
-              className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+              className={`px-8 py-4 rounded-lg font-semibold transition-all duration-300 ${
                 activeApp === 'commute' 
                   ? 'bg-secondary text-secondary-foreground shadow-morphing' 
                   : 'text-muted-foreground hover:text-foreground'
@@ -155,7 +155,7 @@ export const AppShowcase = () => {
             </div>
 
             {/* App Benefits */}
-            <div className="card-morphing bg-gradient-warm p-6">
+            <div className="card-professional bg-gradient-warm p-6">
               <h4 className="font-semibold text-card-foreground mb-4">Key Benefits</h4>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div className="space-y-1">
@@ -174,7 +174,7 @@ export const AppShowcase = () => {
               <Button className="btn-beta">
                 Join Beta Testing
               </Button>
-              <Button className="btn-morphing">
+              <Button className="btn-professional">
                 Learn More
               </Button>
             </div>
@@ -182,7 +182,7 @@ export const AppShowcase = () => {
 
           {/* App Mockup */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl shadow-intense animate-float-gentle">
+            <div className="relative overflow-hidden rounded-lg shadow-intense animate-float-gentle">
               <img 
                 src={appMockup}
                 alt={`${currentApp.name} mobile interface`}
@@ -192,15 +192,15 @@ export const AppShowcase = () => {
             </div>
 
             {/* Floating Feature Cards */}
-            <div className="absolute -top-4 -right-4 card-morphing bg-accent text-accent-foreground p-3 animate-float-gentle" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute -top-4 -right-4 card-professional bg-accent text-accent-foreground p-3 animate-float-gentle" style={{ animationDelay: '0.5s' }}>
               <div className="text-sm font-medium">Real-time</div>
             </div>
 
-            <div className="absolute -bottom-4 -left-4 card-morphing bg-primary text-primary-foreground p-3 animate-float-gentle" style={{ animationDelay: '1s' }}>
+            <div className="absolute -bottom-4 -left-4 card-professional bg-primary text-primary-foreground p-3 animate-float-gentle" style={{ animationDelay: '1s' }}>
               <div className="text-sm font-medium">99.9% Uptime</div>
             </div>
 
-            <div className="absolute top-1/2 -left-8 card-morphing bg-secondary text-secondary-foreground p-4 animate-float-gentle" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute top-1/2 -left-8 card-professional bg-secondary text-secondary-foreground p-4 animate-float-gentle" style={{ animationDelay: '1.5s' }}>
               <div className="text-xs text-secondary-foreground/80">Coming Soon</div>
               <div className="font-medium">Beta Access</div>
             </div>

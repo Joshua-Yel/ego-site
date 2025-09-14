@@ -66,7 +66,7 @@ export const HeroSection = () => {
             {/* Morphing Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="text-gradient-hero block animate-morphing-scale">
+                <span className="text-gradient-hero block">
                   {heroTexts[currentText]}
                 </span>
               </h1>
@@ -77,7 +77,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Beta Countdown */}
-            <div className="card-morphing bg-gradient-hero p-6">
+            <div className="card-professional bg-gradient-hero p-6">
               <h3 className="text-lg font-semibold mb-4 text-primary-foreground">
                 Beta Launch Countdown
               </h3>
@@ -106,7 +106,7 @@ export const HeroSection = () => {
                 Join Beta Testing
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button className="btn-morphing group">
+              <Button className="btn-professional group">
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Watch Demo
               </Button>
@@ -127,7 +127,7 @@ export const HeroSection = () => {
           {/* Right Content - Hero Visual */}
           <div className="relative">
             {/* Main Hero Image */}
-            <div className="relative overflow-hidden rounded-3xl shadow-intense">
+            <div className="relative overflow-hidden rounded-lg shadow-intense">
               <img 
                 src={heroImage} 
                 alt="Traffic transformation visualization"
@@ -149,12 +149,12 @@ export const HeroSection = () => {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute top-8 right-8 card-morphing bg-card p-4 animate-float-gentle" style={{ animationDelay: '2s' }}>
+            <div className="absolute top-8 right-8 card-professional bg-card p-4 animate-float-gentle" style={{ animationDelay: '2s' }}>
               <div className="text-sm font-medium text-card-foreground">Live Tracking</div>
               <div className="text-xs text-muted-foreground">99.9% Accuracy</div>
             </div>
 
-            <div className="absolute bottom-16 right-4 card-morphing bg-accent text-accent-foreground p-3 animate-float-gentle" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute bottom-16 right-4 card-professional bg-accent text-accent-foreground p-3 animate-float-gentle" style={{ animationDelay: '0.5s' }}>
               <div className="text-sm font-medium">Real-time Updates</div>
             </div>
           </div>

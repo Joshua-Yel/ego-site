@@ -98,7 +98,7 @@ export const ProblemSection = () => {
           {problems.map((problem, index) => (
             <div 
               key={index}
-              className="card-morphing text-center group hover-lift"
+              className="card-professional text-center group hover-lift"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative mb-4">
@@ -126,7 +126,7 @@ export const ProblemSection = () => {
         </div>
 
         {/* Visual Impact Section */}
-        <div className="card-morphing bg-gradient-warm p-8 md:p-12 text-center">
+        <div className="card-professional bg-gradient-warm p-8 md:p-12 text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-card-foreground">
             The Real Cost of Inefficiency
           </h3>

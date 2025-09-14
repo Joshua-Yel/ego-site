@@ -35,8 +35,8 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 bg-morphing-blob opacity-5 pointer-events-none" />
+      {/* Professional Background Elements */}
+      <div className="fixed inset-0 bg-professional-gradient opacity-5 pointer-events-none" />
       
       {/* Navigation */}
       <Navbar />

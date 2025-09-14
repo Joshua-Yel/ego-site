@@ -67,11 +67,9 @@ export default {
         'intense': 'var(--shadow-intense)',
       },
       animation: {
-        'morphing-blob': 'morphing-blob 8s ease-in-out infinite',
         'float-gentle': 'float-gentle 4s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
         'slide-up-fade': 'slide-up-fade 0.6s ease-out',
-        'morphing-scale': 'morphing-scale 3s ease-in-out infinite',
         'particle-float': 'particle-float 6s linear infinite',
         'gradient-shift': 'gradient-shift 4s ease infinite',
         'typing': 'typing 2s steps(40, end) infinite alternate',
@@ -97,20 +95,6 @@ export default {
           to: {
             height: "0",
           },
-        },
-        "morphing-blob": {
-          "0%, 100%": {
-            "border-radius": "60% 40% 30% 70% / 60% 30% 70% 40%",
-            "transform": "translate3d(0, 0, 0) rotateZ(0deg)"
-          },
-          "34%": {
-            "border-radius": "70% 60% 20% 40% / 40% 20% 80% 60%",
-            "transform": "translate3d(5px, -5px, 0) rotateZ(5deg)"
-          },
-          "67%": {
-            "border-radius": "100% 60% 60% 100% / 100% 100% 60% 60%",
-            "transform": "translate3d(-5px, 10px, 0) rotateZ(-5deg)"
-          }
         },
         "float-gentle": {
           "0%, 100%": { "transform": "translateY(0px)" },

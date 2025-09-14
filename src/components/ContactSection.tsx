@@ -98,7 +98,7 @@ export const ContactSection = () => {
                 <a
                   key={index}
                   href={method.action}
-                  className="card-morphing group hover-lift block"
+                  className="card-professional group hover-lift block"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start space-x-4">
@@ -126,7 +126,7 @@ export const ContactSection = () => {
             </div>
 
             {/* Company Information */}
-            <div className="card-morphing bg-gradient-warm p-6">
+            <div className="card-professional bg-gradient-warm p-6">
               <h3 className="text-lg font-semibold mb-4 text-card-foreground">
                 About Innewgen
               </h3>
@@ -143,7 +143,7 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="card-morphing p-8 md:p-10">
+            <div className="card-professional p-8 md:p-10">
               {isSubmitted ? (
                 <div className="text-center space-y-6 animate-slide-up-fade">
                   <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
