@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* eGO Design System - Revolutionary Transportation Branding */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* eGO Brand Colors - HSL Values */
+    --ego-mint: 155 47% 93%;
+    --ego-mint-rich: 155 47% 85%;
+    --ego-cream: 57 100% 95%;
+    --ego-yellow: 50 96% 66%;
+    --ego-amber: 45 94% 58%;
+    --ego-orange: 39 92% 53%;
+    --ego-dark: 220 26% 14%;
+    --ego-gray: 220 13% 46%;
+    --ego-white: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Semantic Design Tokens */
+    --background: var(--ego-white);
+    --foreground: var(--ego-dark);
+    
+    --primary: 155 47% 75%;
+    --primary-foreground: var(--ego-dark);
+    --primary-glow: 155 47% 85%;
+    
+    --secondary: 50 96% 66%;
+    --secondary-foreground: var(--ego-dark);
+    --secondary-glow: 50 96% 76%;
+    
+    --accent: 39 92% 53%;
+    --accent-foreground: var(--ego-white);
+    --accent-glow: 39 92% 63%;
+    
+    --muted: 220 13% 96%;
+    --muted-foreground: var(--ego-gray);
+    
+    --card: var(--ego-white);
+    --card-foreground: var(--ego-dark);
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 95%;
+    --ring: var(--ego-mint);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Advanced Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ego-mint)), hsl(var(--ego-yellow)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--ego-cream)), hsl(var(--ego-orange)));
+    --gradient-transit: linear-gradient(90deg, hsl(var(--ego-mint)), hsl(var(--ego-amber)));
+    --gradient-radial: radial-gradient(circle at center, hsl(var(--ego-mint) / 0.1), transparent);
+    
+    /* Morphing Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--ego-mint) / 0.1), 0 2px 4px -1px hsl(var(--ego-mint) / 0.06);
+    --shadow-morphing: 0 10px 25px -3px hsl(var(--ego-mint) / 0.3), 0 4px 6px -2px hsl(var(--ego-mint) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    --shadow-intense: 0 25px 50px -12px hsl(var(--ego-mint) / 0.5);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Animation Variables */
+    --animation-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-morphing: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,6 +119,189 @@ All colors MUST be HSL.
   }
 }
 
+/* Morphing Keyframes & Advanced Animations */
+@keyframes morphing-blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  34% {
+    border-radius: 70% 60% 20% 40% / 40% 20% 80% 60%;
+    transform: translate3d(5px, -5px, 0) rotateZ(5deg);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(-5px, 10px, 0) rotateZ(-5deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.7);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morphing-scale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Component Utilities */
+@layer components {
+  /* Morphing Button Variants */
+  .btn-hero {
+    @apply relative px-8 py-4 text-lg font-semibold rounded-2xl border-0;
+    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply text-primary-foreground transition-all duration-300;
+    @apply hover:shadow-glow hover:scale-105 active:scale-95;
+    @apply before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r;
+    @apply before:from-primary-glow before:to-secondary-glow before:opacity-0;
+    @apply before:transition-opacity before:duration-300 hover:before:opacity-100;
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .btn-morphing {
+    @apply relative px-6 py-3 font-medium rounded-xl transition-all duration-500;
+    @apply bg-card border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-primary-foreground hover:border-primary;
+    @apply hover:shadow-morphing active:scale-95;
+    animation: morphing-scale 3s ease-in-out infinite;
+  }
+
+  .btn-beta {
+    @apply px-8 py-4 font-bold rounded-2xl transition-all duration-300;
+    @apply bg-accent text-accent-foreground shadow-soft;
+    @apply hover:shadow-morphing hover:scale-105 active:scale-95;
+    @apply relative overflow-hidden;
+  }
+
+  /* Card Morphing Effects */
+  .card-morphing {
+    @apply bg-card rounded-3xl p-6 transition-all duration-500;
+    @apply border border-border shadow-soft hover:shadow-intense;
+    @apply hover:scale-105 hover:-translate-y-2;
+    animation: morphing-blob 8s ease-in-out infinite;
+  }
+
+  .card-float {
+    @apply transition-transform duration-300;
+    animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  /* Text Effects */
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .text-morphing {
+    @apply relative overflow-hidden;
+    animation: typing 2s steps(40, end) infinite alternate;
+  }
+
+  /* Background Effects */
+  .bg-morphing-blob {
+    @apply absolute inset-0 opacity-10;
+    background: var(--gradient-radial);
+    animation: morphing-blob 10s ease-in-out infinite;
+  }
+
+  .bg-particles {
+    @apply absolute inset-0 overflow-hidden pointer-events-none;
+  }
+
+  .particle {
+    @apply absolute w-2 h-2 bg-primary rounded-full opacity-30;
+    animation: particle-float 6s linear infinite;
+  }
+
+  /* Layout Utilities */
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-12;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto relative;
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:scale-105 hover:-translate-y-1;
+  }
+
+  .magnetic-hover {
+    @apply transition-all duration-300 cursor-pointer;
+  }
+
+  .magnetic-hover:hover {
+    @apply scale-110 rotate-3;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +309,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-glow;
   }
 }
