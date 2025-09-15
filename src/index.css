@@ -21,11 +21,11 @@
     --background: var(--ego-white);
     --foreground: var(--ego-dark);
     
-    --primary: 155 47% 75%;
+    --primary: 49 98% 60%;
     --primary-foreground: var(--ego-dark);
-    --primary-glow: 155 47% 85%;
+    --primary-glow: 54 100% 80%;
     
-    --secondary: 50 96% 66%;
+    --secondary: 45 94% 58%;
     --secondary-foreground: var(--ego-dark);
     --secondary-glow: 50 96% 76%;
     
@@ -34,26 +34,26 @@
     --accent-glow: 39 92% 63%;
     
     --muted: 220 13% 96%;
-    --muted-foreground: var(--ego-gray);
+    --muted-foreground: 220 13% 35%;
     
     --card: var(--ego-white);
     --card-foreground: var(--ego-dark);
     
     --border: 220 13% 91%;
     --input: 220 13% 95%;
-    --ring: var(--ego-mint);
+    --ring: var(--primary);
 
     /* Advanced Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--ego-mint)), hsl(var(--ego-yellow)));
-    --gradient-warm: linear-gradient(135deg, hsl(var(--ego-cream)), hsl(var(--ego-orange)));
-    --gradient-transit: linear-gradient(90deg, hsl(var(--ego-mint)), hsl(var(--ego-amber)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ego-cream)), hsl(var(--ego-amber)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--ego-cream)), hsl(var(--primary)));
+    --gradient-transit: linear-gradient(90deg, hsl(var(--ego-mint)), hsl(var(--primary)));
     --gradient-radial: radial-gradient(circle at center, hsl(var(--ego-mint) / 0.1), transparent);
     
     /* Morphing Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--ego-mint) / 0.1), 0 2px 4px -1px hsl(var(--ego-mint) / 0.06);
-    --shadow-morphing: 0 10px 25px -3px hsl(var(--ego-mint) / 0.3), 0 4px 6px -2px hsl(var(--ego-mint) / 0.15);
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.12), 0 2px 4px -1px hsl(var(--primary) / 0.08);
+    --shadow-morphing: 0 10px 25px -3px hsl(var(--primary) / 0.28), 0 4px 6px -2px hsl(var(--primary) / 0.16);
     --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
-    --shadow-intense: 0 25px 50px -12px hsl(var(--ego-mint) / 0.5);
+    --shadow-intense: 0 25px 50px -12px hsl(var(--primary) / 0.35);
 
     /* Animation Variables */
     --animation-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,33 +81,34 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222.2 65% 7%;
+    --foreground: 210 40% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222.2 60% 9%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222.2 60% 9%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 210 40% 98%;
+    /* Brand yellow as primary in dark too */
+    --primary: 49 98% 60%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217.2 22% 20%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217.2 22% 16%;
+    --muted-foreground: 215 20.2% 72%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 39 92% 53%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 40.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217.2 22% 20%;
+    --input: 217.2 22% 20%;
+    --ring: 49 98% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

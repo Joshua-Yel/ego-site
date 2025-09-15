@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ReactComponent as Logo } from '../assets/logo.svg';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2 group cursor-pointer">
             <div className="relative">
-              <Zap className="h-8 w-8 text-primary group-hover:text-accent transition-colors duration-300" />
+              {/* <Logo className="h-8 w-8 text-primary group-hover:text-accent transition-colors duration-300" /> */}
               <div className="absolute -inset-1 bg-primary/20 rounded-full animate-pulse-glow opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <span className="text-2xl font-bold text-gradient-hero">eGO</span>

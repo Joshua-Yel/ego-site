@@ -212,45 +212,47 @@ export const ImpactSection = () => {
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full rounded-full opacity-20" />
 
-            <div className="space-y-12">
+            <div className="space-y-16">
               {timeline.map((item, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`flex items-center justify-center animate-slide-up-fade ${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  className={`relative flex items-center lg:items-start animate-slide-up-fade ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="flex-1 lg:text-right lg:pr-8">
-                    {index % 2 === 0 && (
-                      <div className="space-y-2">
-                        <div className="text-2xl font-bold text-primary">{item.year}</div>
-                        <div className="text-lg font-semibold text-card-foreground">{item.event}</div>
+                  {/* Left Content */}
+                  <div
+                    className={`flex-1 ${
+                      index % 2 === 0 ? "lg:text-right lg:pr-12" : "lg:text-left lg:pl-12"
+                    }`}
+                  >
+                    <div className="space-y-2">
+                      <div className="text-2xl font-bold text-primary">{item.year}</div>
+                      <div className="text-lg font-semibold text-card-foreground">
+                        {item.event}
                       </div>
-                    )}
+                    </div>
                   </div>
 
-                  <div className="relative z-10">
-                    <div className={`w-4 h-4 rounded-full border-4 ${
-                      item.status === 'completed' ? 'bg-accent border-accent' :
-                      item.status === 'upcoming' ? 'bg-primary border-primary animate-pulse-glow' :
-                      'bg-muted border-muted-foreground'
-                    }`} />
-                  </div>
-
-                  <div className="flex-1 lg:pl-8">
-                    {index % 2 !== 0 && (
-                      <div className="space-y-2">
-                        <div className="text-2xl font-bold text-primary">{item.year}</div>
-                        <div className="text-lg font-semibold text-card-foreground">{item.event}</div>
-                      </div>
-                    )}
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                    <div
+                      className={`w-5 h-5 rounded-full border-4 ${
+                        item.status === "completed"
+                          ? "bg-accent border-accent"
+                          : item.status === "upcoming"
+                          ? "bg-primary border-primary animate-pulse-glow"
+                          : "bg-muted border-muted-foreground"
+                      }`}
+                    />
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
