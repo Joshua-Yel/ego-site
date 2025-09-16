@@ -1,19 +1,7 @@
-import { useState } from 'react';
-import { Mail, Users, Star, CheckCircle, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Users, Star, CheckCircle } from 'lucide-react';
+import BetaSignupForm from './BetaSignupForm';
 
 export const BetaSection = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle beta signup
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
-
   const betaFeatures = [
     "Priority access to both eGO Transit and eGO Commute",
     "Direct feedback channel to development team", 
@@ -132,47 +120,7 @@ export const BetaSection = () => {
                 Reserve Your Beta Spot
               </h3>
               
-              {isSubmitted ? (
-                <div className="text-center space-y-4 animate-slide-up-fade">
-                  <CheckCircle className="h-16 w-16 text-accent mx-auto animate-pulse-glow" />
-                  <h4 className="text-xl font-semibold text-card-foreground">Welcome to the Beta!</h4>
-                  <p className="text-muted-foreground">
-                    Check your email for confirmation and next steps.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-card-foreground mb-2">
-                        Email Address
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                        <Input
-                          id="email"
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="your.email@example.com"
-                          className="pl-10 py-3 text-lg"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="text-xs text-muted-foreground">
-                      By signing up, you agree to receive updates about the eGO beta program. 
-                      We'll never spam or share your email.
-                    </div>
-                  </div>
-
-                  <Button type="submit" className="btn-hero w-full group">
-                    Reserve My Beta Spot
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </form>
-              )}
+              <BetaSignupForm />
 
               {/* Additional Info */}
               <div className="mt-8 pt-6 border-t border-border text-center">
@@ -193,9 +141,9 @@ export const BetaSection = () => {
               <div className="text-primary-foreground/80">
                 Have questions about the beta program?
               </div>
-              <Button className="btn-professional">
+              <a href="#contact" className="btn-professional inline-block">
                 Contact Beta Team
-              </Button>
+              </a>
             </div>
           </div>
         </div>

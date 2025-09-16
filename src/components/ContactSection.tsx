@@ -1,47 +1,7 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import ContactForm from './ContactForm';
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const contactMethods = [
     {
       icon: Mail,
@@ -64,15 +24,6 @@ export const ContactSection = () => {
       value: "Makati City, Metro Manila",
       action: "#"
     }
-  ];
-
-  const inquiryTypes = [
-    "Beta Testing Partnership",
-    "Media & Press Inquiries", 
-    "Investment Opportunities",
-    "Technical Integration",
-    "General Questions",
-    "Other"
   ];
 
   return (
@@ -144,122 +95,7 @@ export const ContactSection = () => {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="card-professional p-8 md:p-10">
-              {isSubmitted ? (
-                <div className="text-center space-y-6 animate-slide-up-fade">
-                  <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
-                    <Send className="h-10 w-10 text-accent animate-pulse-glow" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-card-foreground">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Thank you for reaching out. We'll get back to you within 24 hours 
-                    with more information about eGO and partnership opportunities.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-card-foreground">
-                        Full Name
-                      </label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Your full name"
-                          className="pl-10"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-card-foreground">
-                        Email Address
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="your.email@example.com"
-                          className="pl-10"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-card-foreground">
-                      Inquiry Type
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleSelectChange}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-primary"
-                      required
-                    >
-                      <option value="">Select inquiry type...</option>
-                      {inquiryTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-card-foreground">
-                      Message
-                    </label>
-                    <div className="relative">
-                      <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Tell us about your interest in eGO, potential partnership opportunities, or any questions you have..."
-                        className="pl-10 min-h-[120px]"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="btn-hero w-full group"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin h-5 w-5 border-2 border-primary-foreground border-t-transparent rounded-full mr-2" />
-                        Sending Message...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </Button>
-
-                  <div className="text-xs text-muted-foreground text-center">
-                    We respect your privacy and will never share your information with third parties.
-                  </div>
-                </form>
-              )}
+              <ContactForm />
             </div>
           </div>
         </div>
