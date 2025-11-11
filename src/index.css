@@ -6,6 +6,13 @@
 
 @layer base {
   :root {
+
+    --ego-sunflower: 45 100% 51%; /* #FFC107 */
+    --ego-amber: 44 100% 45%; /* #FFB300 */
+    --ego-card-bg: 0 0% 100%; /* White */
+    --ego-dark: 220 26% 14%;
+    --ego-gray: 220 13% 46%;
+    --ego-white: 0 0% 100%;
     /* eGO Brand Colors - HSL Values */
     --ego-mint: 155 47% 93%;
     --ego-mint-rich: 155 47% 85%;
@@ -21,9 +28,9 @@
     --background: var(--ego-white);
     --foreground: var(--ego-dark);
     
-    --primary: 155 47% 75%;
+    --primary: var(--ego-sunflower);
     --primary-foreground: var(--ego-dark);
-    --primary-glow: 155 47% 85%;
+    --primary-glow: 45 100% 70%;
     
     --secondary: 50 96% 66%;
     --secondary-foreground: var(--ego-dark);
